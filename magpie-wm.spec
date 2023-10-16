@@ -1,3 +1,5 @@
+%define devname %mklibname -d magpie-wm
+
 %global glib_version 2.69.0
 %global gtk3_version 3.19.8
 %global gsettings_desktop_schemas_version 40~alpha
@@ -89,13 +91,13 @@ Provides: bundled(clutter) = 1.26.0
 %description
 Magpgie is the window manager used by Budgie Desktop.
  
-%package devel
+%package -n %{devname}
 Summary: Development package for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 # for EGL/eglmesaext.h that's included from public cogl-egl-defines.h header
 Requires: egl-devel
  
-%description devel
+%description -n %{devname}
 Header files and libraries for developing against Magpie.
  
 %prep
@@ -121,7 +123,7 @@ Header files and libraries for developing against Magpie.
 %{_libdir}/%{magpie_abi_version}/lib%{oname}-cogl-0.*
 %{_libdir}/%{magpie_abi_version}/lib%{oname}-cogl-pango-0.*
  
-%files devel
+%files -n %{devname}
 %{_includedir}/%{magpie_abi_version}
 %{_libdir}/lib%{magpie_abi_version}.so
 %{_libdir}/pkgconfig/lib%{magpie_abi_version}.pc
