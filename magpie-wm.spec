@@ -16,8 +16,7 @@ Group:		       Graphical desktop/Budgie
 License:       GPL-2.0-or-later
 URL:           https://github.com/BuddiesOfBudgie/magpie
 Source0:       %{url}/releases/download/v%{version}/magpie-%{version}.tar.xz
- 
-Patch0:        meson-add-back-default-driver-option.patch
+
 Patch1:        Remove-support-for-window-shading.patch
  
 BuildRequires: pkgconfig(gobject-introspection-1.0) >= 1.41.0
