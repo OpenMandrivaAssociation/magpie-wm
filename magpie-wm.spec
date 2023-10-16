@@ -104,9 +104,9 @@ Header files and libraries for developing against Magpie.
 %meson_build
 %install
 %meson_install
-%find_lang %{name}
+%find_lang magpie
  
-%files -f %{name}.lang
+%files -f magpie.lang
 %license COPYING
 %{_libdir}/lib%{magpie_abi_version}.so.0
 %{_libdir}/lib%{magpie_abi_version}.so.0.0.0
