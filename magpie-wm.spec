@@ -7,6 +7,8 @@
 %global lcms2_version 2.6
 %global colord_version 1.4.5
 %global magpie_abi_version magpie-0
+
+%define oname magpie
  
 Name:          magpie-wm
 Version:       0.9.3
@@ -115,14 +117,14 @@ Header files and libraries for developing against Magpie.
 %{_libdir}/%{magpie_abi_version}/Cogl-0.*
 %{_libdir}/%{magpie_abi_version}/CoglPango-0.*
 %{_libdir}/%{magpie_abi_version}/Meta-0.*
-%{_libdir}/%{magpie_abi_version}/lib%{name}-clutter-0.*
-%{_libdir}/%{magpie_abi_version}/lib%{name}-cogl-0.*
-%{_libdir}/%{magpie_abi_version}/lib%{name}-cogl-pango-0.*
+%{_libdir}/%{magpie_abi_version}/lib%{oname}-clutter-0.*
+%{_libdir}/%{magpie_abi_version}/lib%{oname}-cogl-0.*
+%{_libdir}/%{magpie_abi_version}/lib%{oname}-cogl-pango-0.*
  
 %files devel
 %{_includedir}/%{magpie_abi_version}
 %{_libdir}/lib%{magpie_abi_version}.so
 %{_libdir}/pkgconfig/lib%{magpie_abi_version}.pc
-%{_libdir}/pkgconfig/%{name}-clutter-0.pc
-%{_libdir}/pkgconfig/%{name}-cogl-0.pc
-%{_libdir}/pkgconfig/%{name}-cogl-pango-0.pc
+%{_libdir}/pkgconfig/%{oname}-clutter-0.pc
+%{_libdir}/pkgconfig/%{oname}-cogl-0.pc
+%{_libdir}/pkgconfig/%{oname}-cogl-pango-0.pc
