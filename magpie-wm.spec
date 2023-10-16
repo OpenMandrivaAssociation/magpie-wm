@@ -47,6 +47,7 @@ BuildRequires: x11-server-xvfb
 BuildRequires: pkgconfig(xkeyboard-config)
 BuildRequires: zenity
 BuildRequires: desktop-file-utils
+BuildRequires: cvt
 # Bootstrap requirements
 BuildRequires: gtk-doc gettext-devel git-core
 BuildRequires: pkgconfig(libcanberra)
