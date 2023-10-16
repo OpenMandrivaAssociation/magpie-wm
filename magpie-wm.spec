@@ -8,14 +8,14 @@
 %global colord_version 1.4.5
 %global magpie_abi_version magpie-0
  
-Name:          magpie
-Version:       0.9.2
-Release:       1%{?dist}
+Name:          magpie-wm
+Version:       0.9.3
+Release:       1
 Summary:       Window manager for Budgie Desktop
- 
+Group:		       Graphical desktop/Budgie
 License:       GPL-2.0-or-later
 URL:           https://github.com/BuddiesOfBudgie/magpie
-Source0:       %{url}/releases/download/v%{version}/%{name}-%{version}.tar.xz
+Source0:       %{url}/releases/download/v%{version}/magpie-%{version}.tar.xz
  
 Patch0:        meson-add-back-default-driver-option.patch
 Patch1:        Remove-support-for-window-shading.patch
@@ -37,26 +37,23 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: pkgconfig(xkbcommon-x11)
 BuildRequires: pkgconfig(xkbfile)
 BuildRequires: pkgconfig(xtst)
-BuildRequires: mesa-libEGL-devel
-BuildRequires: mesa-libGLES-devel
-BuildRequires: mesa-libGL-devel
-BuildRequires: mesa-libgbm-devel
+BuildRequires: egl-devel
+BuildRequires: pkgconfig(dri)
 BuildRequires: pkgconfig(glesv2)
 BuildRequires: pkgconfig(graphene-gobject-1.0)
 BuildRequires: pam-devel
-BuildRequires: pkgconfig(libpipewire-0.3) >= %{pipewire_version}
+BuildRequires: pkgconfig(libpipewire-0.3)
 BuildRequires: pkgconfig(sysprof-capture-4)
-BuildRequires: sysprof-devel
 BuildRequires: pkgconfig(libsystemd)
-BuildRequires: xorg-x11-server-Xorg
-BuildRequires: xorg-x11-server-Xvfb
+BuildRequires: x11-server-xorg
+BuildRequires: x11-server-xvfb
 BuildRequires: pkgconfig(xkeyboard-config)
 BuildRequires: zenity
 BuildRequires: desktop-file-utils
 # Bootstrap requirements
 BuildRequires: gtk-doc gettext-devel git-core
 BuildRequires: pkgconfig(libcanberra)
-BuildRequires: pkgconfig(gsettings-desktop-schemas) >= %{gsettings_desktop_schemas_version}
+BuildRequires: pkgconfig(gsettings-desktop-schemas)
 BuildRequires: pkgconfig(gnome-settings-daemon)
 BuildRequires: meson
 BuildRequires: pkgconfig(gbm)
@@ -64,26 +61,24 @@ BuildRequires: pkgconfig(gnome-desktop-3.0)
 BuildRequires: pkgconfig(gudev-1.0)
 BuildRequires: pkgconfig(libdrm)
 BuildRequires: pkgconfig(libstartup-notification-1.0)
-BuildRequires: pkgconfig(lcms2) >= %{lcms2_version}
-BuildRequires: pkgconfig(colord) >= %{colord_version}
+BuildRequires: pkgconfig(lcms2)
+BuildRequires: pkgconfig(colord)
  
-BuildRequires: pkgconfig(json-glib-1.0) >= %{json_glib_version}
-BuildRequires: pkgconfig(libinput) >= %{libinput_version}
- 
-Requires: control-center-filesystem
-Requires: gsettings-desktop-schemas%{?_isa} >= %{gsettings_desktop_schemas_version}
+BuildRequires: pkgconfig(json-glib-1.0)
+BuildRequires: pkgconfig(libinput) 
+
+#Requires: control-center-filesystem
+Requires: gsettings-desktop-schemas%{?_isa}
 Requires: gnome-settings-daemon
-Requires: gtk3%{?_isa} >= %{gtk3_version}
-Requires: json-glib%{?_isa} >= %{json_glib_version}
-Requires: libinput%{?_isa} >= %{libinput_version}
-Requires: pipewire%{_isa} >= %{pipewire_version}
-Requires: startup-notification
+Requires: gtk+3
+Requires: json-glib
+Requires: libinput
+Requires: pipewire
+Requires: %{_lib}startup-notification-1_0
 Requires: dbus
 Requires: zenity
-Requires: mutter-common
- 
-Recommends: mesa-dri-drivers%{?_isa}
- 
+Requires: mutter
+
 Provides: firstboot(windowmanager) = magpie
  
 # Cogl and Clutter were forked at these versions, but have diverged
