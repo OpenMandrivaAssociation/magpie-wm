@@ -93,7 +93,7 @@ Magpgie is the window manager used by Budgie Desktop.
 Summary: Development package for %{name}
 Requires: %{name}%{?_isa} = %{version}-%{release}
 # for EGL/eglmesaext.h that's included from public cogl-egl-defines.h header
-Requires: mesa-libEGL-devel
+Requires: egl-devel
  
 %description devel
 Header files and libraries for developing against Magpie.
