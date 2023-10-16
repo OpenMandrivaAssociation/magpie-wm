@@ -99,7 +99,7 @@ Requires: mesa-libEGL-devel
 Header files and libraries for developing against Magpie.
  
 %prep
-%autosetup -S git
+%autosetup -n magpie-%{version} -p1
  
 %build
 %meson -Degl_device=true
