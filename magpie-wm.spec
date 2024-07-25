@@ -14,7 +14,7 @@
  
 Name:          magpie-wm
 Version:       0.9.3
-Release:       1
+Release:       2
 Summary:       Window manager for Budgie Desktop
 Group:		       Graphical desktop/Budgie
 License:       GPL-2.0-or-later
@@ -49,7 +49,7 @@ BuildRequires: pkgconfig(libsystemd)
 BuildRequires: x11-server-xorg
 BuildRequires: x11-server-xvfb
 BuildRequires: pkgconfig(xkeyboard-config)
-BuildRequires: zenity
+BuildRequires: zenity-gtk
 BuildRequires: desktop-file-utils
 BuildRequires: cvt
 # Bootstrap requirements
@@ -78,7 +78,7 @@ Requires: libinput
 Requires: pipewire
 Requires: %{_lib}startup-notification-1_0
 Requires: dbus
-Requires: zenity
+Requires: zenity-gtk
 Requires: mutter
 
 Provides: firstboot(windowmanager) = magpie
