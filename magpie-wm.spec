@@ -13,8 +13,8 @@
 %define oname magpie
  
 Name:          magpie-wm
-Version:       0.9.3
-Release:       2
+Version:       0.9.4
+Release:       1
 Summary:       Window manager for Budgie Desktop
 Group:		       Graphical desktop/Budgie
 License:       GPL-2.0-or-later
