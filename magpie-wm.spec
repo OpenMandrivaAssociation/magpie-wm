@@ -44,7 +44,7 @@ BuildRequires: pkgconfig(glesv2)
 BuildRequires: pkgconfig(graphene-gobject-1.0)
 BuildRequires: pam-devel
 BuildRequires: pkgconfig(libpipewire-0.3)
-BuildRequires: pkgconfig(sysprof-capture-4)
+BuildRequires: pkgconfig(sysprof-capture-4) sysprof-cli
 BuildRequires: pkgconfig(libsystemd)
 BuildRequires: x11-server-xorg
 BuildRequires: x11-server-xvfb
